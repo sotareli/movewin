@@ -1,15 +1,13 @@
-import logo from './logo_movewin.png';
-import './App.css';
+
+import Banner from './components/Banner/Banner';
+import Formulario from './components/Formulario';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} alt="logo" />
-        <p>
-          Casca do nosso Front
-        </p>
-      </header>
+      <Banner />
+      <Formulario />
+
     </div>
   );
 }
