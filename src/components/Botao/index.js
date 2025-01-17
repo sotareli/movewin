@@ -3,12 +3,8 @@ import './Botao.css'
 
 const Botao = (props) => {
 
-    function btLogarClick(){
-
-    }
-
     return (
-        <button onClick={'/favoritos'} className='botao'>
+        <button className='botao'>
             {props.children}
         </button>
 
