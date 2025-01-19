@@ -1,14 +1,11 @@
-import './Botao.css'
-
+import "./Botao.css";
 
 const Botao = (props) => {
+	return (
+		<button type="submit" className="botao" onClick={props.onClick}>
+			{props.children}
+		</button>
+	);
+};
 
-    return (
-        <button className='botao'>
-            {props.children}
-        </button>
-
-    )
-}
-
-export default Botao
+export default Botao;

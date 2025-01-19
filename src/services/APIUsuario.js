@@ -1,8 +1,22 @@
-import axios from "axios";
+import { axiosInstance, axiosInstanceExercises } from "./axiosInstance";
 
-const API_URL = process.env.REACT_APP_API_URL;
+const host = {
+	exercises: "/api/exercises",
+	users: "/usuarios",
+};
 
-export async function getFunction(){
-    const response = await axios.get(`${API_URL}/`);
-    return response.data;
-}
+export const api = {
+	exercises: {
+		list: () => {
+			return axiosInstanceExercises.get(`${host.exercises}`);
+		},
+	},
+	users: {
+		login: (body) => {
+			return axiosInstance.post(`${host.users}/login`, body);
+		},
+		list: () => {
+			return axiosInstance.get(`${host.users}`);
+		},
+	},
+};

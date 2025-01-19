@@ -1,15 +1,6 @@
+import { AppRouter } from "./Router";
 
-import Banner from './components/Banner/Banner';
-import Formulario from './components/Formulario';
-
-function App() {
-  return (
-    <div className="App">
-      <Banner />
-      <Formulario />
-
-    </div>
-  );
-}
-
+const App = () => {
+	return <AppRouter />;
+};
 export default App;
