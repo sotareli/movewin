@@ -13,6 +13,8 @@ const Formulario = () => {
 	const [username, setUsername] = useState();
 	const [password, setPassword] = useState();
 
+	const [failLoginMessage, setFailLoginMessage] = useState();
+
 	async function onClickLogin() {
 		try {
 			const body = {
@@ -24,6 +26,8 @@ const Formulario = () => {
 
 			if (loggedSuccess) {
 				navigate("/exercises");
+			} else {
+				setFailLoginMessage("Usuário sem acesso ao aplicativo");
 			}
 		} catch (error) {
 			console.log(error);
@@ -33,7 +37,6 @@ const Formulario = () => {
 	return (
 		<>
 			<Banner />
-
 			<section className="formulario">
 				<div>
 					<h2> Faça seu Login: </h2>
@@ -49,8 +52,12 @@ const Formulario = () => {
 						label="Senha"
 						placeholder="Digite sua senha"
 					/>
+
 					<Botao onClick={onClickLogin}>Logar</Botao>
 				</div>
+				{failLoginMessage ?? (
+					<p className="alert-message">{failLoginMessage}</p>
+				)}
 			</section>
 		</>
 	);

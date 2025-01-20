@@ -110,7 +110,6 @@ const TabelaAtividades = (props) => {
 		try {
 			const { data } = await api.exercises.list();
 
-			debugger;
 			const formattedData = data?.map((exercise) => {
 				return {
 					id: exercise?._id,
@@ -135,7 +134,7 @@ const TabelaAtividades = (props) => {
 			<h1>Histórico de Exercicios</h1>
 			<DataTable
 				columns={colunas}
-				data={dados}
+				data={exercises}
 				fixedHeader
 				pagination
 			></DataTable>
